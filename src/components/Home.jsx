@@ -1,5 +1,11 @@
+import Hero from "./Hero"
+
 const Home = () => {
-  return <div>Home</div>
+  return (
+    <>
+      <Hero text='Welcome' />
+    </>
+  )
 }
 
 export default Home

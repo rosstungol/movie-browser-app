@@ -1,5 +1,10 @@
-const About = () => {
-  return <div>About us</div>
-}
+import Hero from "./Hero"
 
+const About = () => {
+  return (
+    <>
+      <Hero text='About us' />
+    </>
+  )
+}
 export default About
