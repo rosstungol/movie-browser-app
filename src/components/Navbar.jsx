@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom"
 import NavLinks from "./NavLinks"
+import { Link } from "react-router-dom"
 
 const Navbar = ({ searchText, onSearchTextChange }) => {
   const handleSearchTextChange = (e) => {

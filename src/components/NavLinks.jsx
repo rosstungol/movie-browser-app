@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const NavLinks = () => {
   return (
     <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
