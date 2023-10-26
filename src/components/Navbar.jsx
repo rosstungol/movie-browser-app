@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
 
-const Navbar = ({ searchText, setSearchText }) => {
-  const updateSearchText = (e) => {
-    setSearchText(e.target.value)
+const Navbar = ({ searchText, onSearchTextChange }) => {
+  const handleSearchTextChange = (e) => {
+    onSearchTextChange(e.target.value)
   }
 
   return (
@@ -47,7 +47,7 @@ const Navbar = ({ searchText, setSearchText }) => {
               placeholder='Search'
               aria-label='Search'
               value={searchText}
-              onChange={updateSearchText}
+              onChange={handleSearchTextChange}
             />
             <button className='btn btn-outline-success' type='submit'>
               Search
