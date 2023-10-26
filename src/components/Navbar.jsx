@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import NavLinks from "./NavLinks"
 
 const Navbar = ({ searchText, onSearchTextChange }) => {
   const handleSearchTextChange = (e) => {
@@ -23,23 +24,7 @@ const Navbar = ({ searchText, onSearchTextChange }) => {
           <span className='navbar-toggler-icon' />
         </button>
         <div className='collapse navbar-collapse' id='navbarSupportedContent'>
-          <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
-            <li className='nav-item'>
-              <Link className='nav-link active' aria-current='page' to='/'>
-                Home
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link className='nav-link' to='/about'>
-                About
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <a className='nav-link disabled' aria-disabled='true'>
-                Coming soon
-              </a>
-            </li>
-          </ul>
+          <NavLinks />
           <form className='d-flex' role='search'>
             <input
               className='form-control me-2'
