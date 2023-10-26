@@ -1,9 +1,11 @@
 import Hero from "./Hero"
 
-const Search = () => {
+const Search = ({ keyword, searchResults }) => {
+  const title = `You are searching for ${keyword}`
+
   return (
     <>
-      <Hero text='You are searching for...' />
+      <Hero text={title} />
     </>
   )
 }
