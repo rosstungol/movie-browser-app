@@ -1,8 +1,11 @@
 import NavLinks from "./NavLinks"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const Navbar = ({ searchText, onSearchTextChange }) => {
+  const navigate = useNavigate()
+
   const handleSearchTextChange = (e) => {
+    navigate("/search")
     onSearchTextChange(e.target.value)
   }
 
