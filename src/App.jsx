@@ -5,6 +5,7 @@ import Home from "./components/Home"
 import About from "./components/About"
 import Search from "./components/Search"
 import Movie from "./components/Movie"
+import PageNotFound from "./components/PageNotFound"
 import { getMovieResultsUrl } from "./utils/utils"
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           }
         />
         <Route path='/movies/:id' element={<Movie />} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </>
   )
