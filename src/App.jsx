@@ -13,11 +13,23 @@ function App() {
   const [searchText, setSearchText] = useState("")
 
   useEffect(() => {
-    if (searchText) {
-      fetch(getMovieResultsUrl(searchText))
-        .then((response) => response.json())
-        .then((data) => setSearchResults(data.results))
+    const fetchData = async () => {
+      if (searchText) {
+        try {
+          const response = await fetch(getMovieResultsUrl(searchText))
+          if (response.ok) {
+            const data = await response.json()
+            setSearchResults(data.results)
+          } else {
+            console.error("Failed to fetch data")
+          }
+        } catch (error) {
+          console.error("An error occurred:", error)
+        }
+      }
     }
+
+    fetchData()
   }, [searchText])
 
   return (
