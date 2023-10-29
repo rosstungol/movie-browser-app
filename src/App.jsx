@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import Home from "./components/Home"
 import About from "./components/About"
 import Search from "./components/Search"
+import Movie from "./components/Movie"
 import { getMovieResultsUrl } from "./utils/utils"
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
             <Search keyword={searchText} searchResults={searchResults} />
           }
         />
+        <Route path='/movies/:id' element={<Movie />} />
       </Routes>
     </>
   )
