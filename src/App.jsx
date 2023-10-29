@@ -5,7 +5,7 @@ import Home from "./components/Home"
 import About from "./components/About"
 import Search from "./components/Search"
 import Movie from "./components/Movie"
-import PageNotFound from "./components/PageNotFound"
+import BlankSlate from "./components/BlankSlate"
 import { getMovieResultsUrl } from "./utils/utils"
 
 function App() {
@@ -33,7 +33,16 @@ function App() {
           }
         />
         <Route path='/movies/:id' element={<Movie />} />
-        <Route path='*' element={<PageNotFound />} />
+        <Route
+          path='*'
+          element={
+            <BlankSlate
+              header='404 - Page Not Found'
+              body='The page you are looking for might have been removed, had its name
+              changed or is temporarily unavailable.'
+            />
+          }
+        />
       </Routes>
     </>
   )
