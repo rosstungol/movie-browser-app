@@ -1,5 +1,6 @@
 import Hero from "./Hero"
 import MovieCard from "./MovieCard"
+import BlankSlate from "./BlankSlate"
 
 const Search = ({ keyword, searchResults }) => {
   const title = `You are searching for ${keyword}`
@@ -7,14 +8,24 @@ const Search = ({ keyword, searchResults }) => {
     return <MovieCard movie={movie} key={movie.id} />
   })
 
+  if (keyword && searchResults.length === 0) {
+    return (
+      <>
+        <Hero text={title} />
+        <BlankSlate
+          header='No Results Found'
+          body='Sorry, but nothing matched your search terms'
+        />
+      </>
+    )
+  }
+
   return (
     <>
       <Hero text={title} />
-      {resultsList && (
-        <div className='container'>
-          <div className='row'>{resultsList}</div>
-        </div>
-      )}
+      <div className='container'>
+        <div className='row'>{resultsList}</div>
+      </div>
     </>
   )
 }
