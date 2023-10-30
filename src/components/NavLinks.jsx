@@ -1,17 +1,17 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 const NavLinks = () => {
   return (
     <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
       <li className='nav-item'>
-        <Link className='nav-link active' aria-current='page' to='/'>
+        <NavLink className='nav-link' aria-current='page' to='/'>
           Home
-        </Link>
+        </NavLink>
       </li>
       <li className='nav-item'>
-        <Link className='nav-link' to='/about'>
+        <NavLink className='nav-link' to='/about'>
           About
-        </Link>
+        </NavLink>
       </li>
       <li className='nav-item'>
         <a className='nav-link disabled' aria-disabled='true'>
