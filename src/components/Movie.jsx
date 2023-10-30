@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import Hero from "./Hero"
+import { getMovieUrl } from "../utils/utils"
 
 const Movie = () => {
   const { id } = useParams()
@@ -10,9 +11,7 @@ const Movie = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${id}?api_key=f112456204d06b0cd5c500363b2e0cd0&languange=en-US`
-        )
+        const response = await fetch(getMovieUrl(id))
         if (response.ok) {
           const data = await response.json()
           setMovieDetails(data)
