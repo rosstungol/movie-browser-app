@@ -8,14 +8,24 @@ const Movie = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=f112456204d06b0cd5c500363b2e0cd0&languange=en-US`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setMovieDetails(data)
-        setIsLoading(false)
-      })
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          `https://api.themoviedb.org/3/movie/${id}?api_key=f112456204d06b0cd5c500363b2e0cd0&languange=en-US`
+        )
+        if (response.ok) {
+          const data = await response.json()
+          setMovieDetails(data)
+          setIsLoading(false)
+        } else {
+          console.log("Failed to fetch data")
+        }
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    fetchData()
   }, [id])
 
   function renderMovieDetails() {
